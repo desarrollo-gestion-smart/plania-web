@@ -276,7 +276,7 @@ export default function BookingPage({ params }: PageProps) {
 
     console.log('🔍 Día:', dayName, 'Horario:', schedule);
 
-    if (schedule && schedule.active) {
+    if (schedule && schedule.active && selectedProfessional) {
       const slots = generateTimeSlots(schedule.start, schedule.until);
       const occupied = getOccupiedSlots(dateStr, selectedProfessional);
       const available = slots.map((time) => ({

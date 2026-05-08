@@ -526,7 +526,7 @@ export default function DashboardPage() {
       const timeStr = `${String(currentHour).padStart(2, '0')}:${String(currentMin).padStart(2, '0')}`;
 
       // Check if time is in break period
-      const isInBreak = breakStartHour !== null && breakUntilHour !== null &&
+      const isInBreak = breakStartHour !== null && breakUntilHour !== null && breakStartMin !== null && breakUntilMin !== null &&
         (currentHour > breakStartHour || (currentHour === breakStartHour && currentMin >= breakStartMin)) &&
         (currentHour < breakUntilHour || (currentHour === breakUntilHour && currentMin < breakUntilMin));
 
@@ -693,7 +693,7 @@ Mas información consultar en el portal de rastreo`;
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: 'easeOut' },
+      transition: { duration: 0.5, easing: 'easeOut' },
     },
   };
 
