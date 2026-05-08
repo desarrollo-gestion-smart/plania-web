@@ -45,7 +45,7 @@ export default function LoginPage() {
       console.log('✅ Datos recibidos:', JSON.stringify(responseData, null, 2));
 
       // Validar que la respuesta tenga la estructura esperada
-      if (!responseData.planiaToken || !responseData.data) {
+      if (!responseData.planiaToken || !responseData.business) {
         console.error('❌ Estructura de respuesta inválida:', responseData);
         throw new Error('La respuesta del servidor no tiene la estructura esperada');
       }
@@ -53,9 +53,9 @@ export default function LoginPage() {
       // Guardar todos los datos necesarios
       localStorage.setItem('planiaToken', responseData.planiaToken);
       localStorage.setItem('refreshToken', responseData.refreshToken);
-      localStorage.setItem('business', JSON.stringify(responseData.data));
+      localStorage.setItem('business', JSON.stringify(responseData.business));
       console.log('🔐 Datos guardados en localStorage');
-      console.log('📊 Negocio:', responseData.data.nombre);
+      console.log('📊 Negocio:', responseData.business.nombre);
 
       router.push('/dashboard');
     } catch (err) {
