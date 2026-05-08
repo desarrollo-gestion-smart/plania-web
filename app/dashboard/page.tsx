@@ -124,8 +124,8 @@ export default function DashboardPage() {
     country.name.toLowerCase().includes(countrySearch.toLowerCase()) ||
     country.code.includes(countrySearch)
   );
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://plania.ejesatelital.com';
-  const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://plania.ejesatelital.com/api';
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://plania.ejesatelital.com';
+  const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://plania.ejesatelital.com/api';
 
   useEffect(() => {
     const token = localStorage.getItem('planiaToken');
